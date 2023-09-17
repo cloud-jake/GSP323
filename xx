@@ -1,0 +1,12 @@
+gcloud dataflow jobs run GSP323 \
+  --gcs-location gs://dataflow-templates-us-central1/latest/Stream_GCS_Text_to_BigQuery \
+  --region us-central1 \
+  --staging-location gs://qwiklabs-gcp-02-7c409191707c-marking/temp \
+  --parameters \
+javascriptTextTransformGcsPath="gs://cloud-training/gsp323/lab.js",\
+JSONPath="gs://cloud-training/gsp323/lab.schema",\
+javascriptTextTransformFunctionName="transform",\
+outputTable="qwiklabs-gcp-02-7c409191707c:lab_410.customers_983",\
+inputFilePattern="gs://cloud-training/gsp323/lab.csv",\
+bigQueryLoadingTemporaryDirectory="gs://qwiklabs-gcp-02-7c409191707c-marking/bigquery_temp"
+student_03_9b91c49d39a9@cloudshell:~/GSP323 (qwiklabs-gcp-02-7c409191707c)$ 

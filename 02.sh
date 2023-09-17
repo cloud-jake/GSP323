@@ -17,8 +17,10 @@ source variables.inc
 #Max Worker Nodes	2
 
 #copy file
-gsutil cp gs://cloud-training/gsp323/data.txt /data.txt
-hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt
+#gsutil cp gs://cloud-training/gsp323/data.txt /data.txt
+
+# Run this on one of the compute engine instances for cluster
+#hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt
 
 #Create a cluster
 gcloud config set dataproc/region $REGION
