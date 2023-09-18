@@ -16,11 +16,6 @@ source variables.inc
 #Worker Node	Set Machine Type to e2-standard-2
 #Max Worker Nodes	2
 
-#copy file
-#gsutil cp gs://cloud-training/gsp323/data.txt /data.txt
-
-# Run this on one of the compute engine instances for cluster
-#hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt
 
 #Create a cluster
 gcloud config set dataproc/region $REGION
@@ -29,10 +24,19 @@ gcloud dataproc clusters create example-cluster  --num-workers 2 \
   --worker-machine-type e2-standard-2 \
   --worker-boot-disk-size 100  
 
-gcloud dataproc jobs submit spark --cluster example-cluster \
-  --max-failures-per-hour=1 \
-  --class org.apache.spark.examples.SparkPageRank \
-  --jars file:///usr/lib/spark/examples/jars/spark-examples.jar -- "/data.txt"
+#copy file
+#gsutil cp gs://cloud-training/gsp323/data.txt /data.txt
+
+echo "" 
+echo "Run this on one of the compute engine instances for cluster"
+echo "hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt"
+echo " "
+echo "Then run 02-1.sh"
+
+#gcloud dataproc jobs submit spark --cluster example-cluster \
+#  --max-failures-per-hour=1 \
+#  --class org.apache.spark.examples.SparkPageRank \
+#  --jars file:///usr/lib/spark/examples/jars/spark-examples.jar -- "/data.txt"
 
 
 #POST /v1/projects/qwiklabs-gcp-04-a488da724a4b/regions/us-central1/jobs:submit/
