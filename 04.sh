@@ -22,5 +22,5 @@ gcloud ml language analyze-entities --content="${WORDS}" > result.json
 
 
 # copy output to location
-gsutil cp result.json gs://${LANG_PATH}
+gsutil cp result.json ${LANG_PATH}
 
