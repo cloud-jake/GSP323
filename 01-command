@@ -1,0 +1,10 @@
+gcloud dataflow jobs run gsp323 --gcs-location gs://dataflow-templates-us-central1/latest/GCS_Text_to_BigQuery --region us-central1 --worker-machine-type e2-standard-2 --staging-location gs://qwiklabs-gcp-01-dd0827d905df-marking/temp --additional-user-labels {} --parameters javascriptTextTransformGcsPath=gs://cloud-training/gsp323/lab.js,JSONPath=gs://cloud-training/gsp323/lab.schema,javascriptTextTransformFunctionName=transform,outputTable=qwiklabs-gcp-01-dd0827d905df:lab_316.customers_147,inputFilePattern=gs://cloud-training/gsp323/lab.csv,bigQueryLoadingTemporaryDirectory=gs://qwiklabs-gcp-01-dd0827d905df-marking/bigquery_temp
+
+gcloud dataflow jobs run argh --gcs-location gs://dataflow-templates-us-central1/latest/GCS_Text_to_BigQuery --region us-central1 --additional-user-labels {}
+
+
+
+
+gcloud dataflow jobs run gsp323foo --gcs-location gs://dataflow-templates-us-central1/latest/GCS_Text_to_BigQuery --region us-central1 --worker-machine-type e2-standard-2 --staging-location gs://qwiklabs-gcp-01-dd0827d905df-marking/temp --parameters javascriptTextTransformGcsPath=gs://cloud-training/gsp323/lab.js,JSONPath=gs://cloud-training/gsp323/lab.schema,javascriptTextTransformFunctionName=transform,outputTable=qwiklabs-gcp-01-dd0827d905df:lab_316.customers_147,inputFilePattern=gs://cloud-training/gsp323/lab.csv,bigQueryLoadingTemporaryDirectory=gs://qwiklabs-gcp-01-dd0827d905df-marking/bigquery_temp
+
+

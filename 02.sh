@@ -32,37 +32,3 @@ echo "Run this on one of the compute engine instances for cluster"
 echo "hdfs dfs -cp gs://cloud-training/gsp323/data.txt /data.txt"
 echo " "
 echo "Then run 02-1.sh"
-
-#gcloud dataproc jobs submit spark --cluster example-cluster \
-#  --max-failures-per-hour=1 \
-#  --class org.apache.spark.examples.SparkPageRank \
-#  --jars file:///usr/lib/spark/examples/jars/spark-examples.jar -- "/data.txt"
-
-
-#POST /v1/projects/qwiklabs-gcp-04-a488da724a4b/regions/us-central1/jobs:submit/
-#{
-#  "projectId": "qwiklabs-gcp-04-a488da724a4b",
-#  "job": {
-#    "placement": {
-##      "clusterName": "example-cluster"
-#    },
-#    "statusHistory": [],
-#    "reference": {
-#      "jobId": "job-b2fcac1d",
-#      "projectId": "qwiklabs-gcp-04-a488da724a4b"
-#    },
-#    "scheduling": {
-#O      "maxFailuresPerHour": "1"
-#    },
-#    "sparkJob": {
-##      "mainClass": "org.apache.spark.examples.SparkPageRank",
-#      "properties": {},
-##      "jarFileUris": [
-#        "file:///usr/lib/spark/examples/jars/spark-examples.jar"
-#      ],
-#      "args": [
-#O        "/data.txt"
-#      ]
-#    }
-#  }
-#}
