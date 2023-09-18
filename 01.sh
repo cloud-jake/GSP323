@@ -8,8 +8,8 @@ gcloud services enable dataflow.googleapis.com
 
 
 UDF_PATH="gs://cloud-training/gsp323/lab.js"
-#JSON_PATH="gs://cloud-training/gsp323/lab.schema"
-JSON_PATH="gs://bq-jake--skillsboost/lab.schema.fixed"
+JSON_PATH="gs://cloud-training/gsp323/lab.schema"
+#JSON_PATH="gs://bq-jake--skillsboost/lab.schema.fixed"
 UDF_NAME="transform"
 GCS_INPUT="gs://cloud-training/gsp323/lab.csv"
 MACHINE_TYPE="e2-standard-2"
@@ -21,7 +21,7 @@ bq mk \
  --table \
  --description "This is my table" \
  ${BQ_OUTPUT} \
- ${JSON_PATH}
+ lab.schema.fixed
 
 #Create a Cloud Storage Bucket called Cloud Storage Bucket Name.
 gsutil mb gs://$GCS_BUCKET
